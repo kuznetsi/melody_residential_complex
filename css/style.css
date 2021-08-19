@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "Bebas Neue";
+    src: local("BebasNeueRegular"), url("../fonts/BebasNeueRegular.woff2") format("woff2"),
+      url("../fonts/BebasNeueRegular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }  
 * {
     box-sizing: border-box;
 }
@@ -49,4 +57,60 @@ body {
     line-height: 20px;
     text-decoration: none;
     color: #fff;
+}
+.main {
+    max-width: 1280px;
+    margin: auto;
+    padding-top: 54px;
+    display: flex; /* Умещаем в строку блоки (фото дома и счетчк) */
+}
+.main-info{
+    flex-grow: 1; /* Блок со счетчиком занимает все свободное место */
+    text-align: center;
+    display: flex; /* Чтобы выстраивал элементы по вертикали */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.home-image path { /* Скрываем слои выделения этажа */
+    opacity: 0;
+    cursor: pointer;
+}
+.home-image path:hover { /* Отображаем слои этажа при наведения мыши */
+    opacity: 1;
+}
+.counter-group {
+    display: flex; /* Кнопки выстраиваются по вертикали и встают друг за другом*/
+    flex-direction: column;
+    align-items: center;
+}
+.counter-button {
+    cursor: pointer;
+    background-color: #fff; /* Убираем фон и обводку у кнопок */
+    border: none;
+}
+.counter-arrow-down {
+    transform: rotateX(180deg); /* Переворачиваем стрелку на 180 градусов */
+}
+.main-title {
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: normal;
+    font-size: 37px;
+    line-height: 44px;
+    color: #635854;
+}
+.counter {
+    color: #635854;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 124px;
+    margin-top: 10px;
+}
+.button-primary {
+    background: #3596F5;
+    border-radius: 6px; 
+    color: #fff;
+    border: none;
+    padding: 16px 36px;
+    cursor: pointer;
 }
