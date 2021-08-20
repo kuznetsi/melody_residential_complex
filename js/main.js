@@ -3,6 +3,9 @@ $(document).ready(function () {
     var floorPath =  $(".home-image path"); // Каждый отдельный этаж в SVG
     var counterUp = $(".counter-up"); // Кнопка вверх (отслеживаем клик по этой кнопке)
     var counterDown = $(".counter-down"); // Кнопка вниз (отслеживаем клик по этой кнопке)
+    var modal = $('.modal');
+    var modalClouseButton = $('.modal-clouse-button'); // Помещаем кнопку в переменную
+    var viewFlatsButton = $(".view-flats"); // Кнопка для проссмотра этажей
     // Класс в котором лежат изображения выделения этажей
     
     // Функция при наведении мышью на этаж
@@ -11,6 +14,14 @@ $(document).ready(function () {
             currentFloor = $(this).attr("data-floor"); // Получаение значеине текущего этажа
             $(".counter").text(currentFloor); // Записываем значение этажа в счетчик справа
     });
+    // При клике на floorPath модальному окну будет присваиваться класс is-open
+    floorPath.on('click', toggleModal);
+    
+    // При клике на modalClouseButton модальному окну будет присваиваться класс is-open 
+    modalClouseButton.on('click', toggleModal);
+
+    viewFlatsButton.on('click', toggleModal);
+
 
     // Действие по кнопке вверх
     counterUp.on("click", function () { // Отслеживаем клик по кнопке вверх
@@ -40,5 +51,9 @@ $(document).ready(function () {
             
         } 
     });
+    // Функция открыть-закрыть окно
+    function toggleModal() { 
+            modal.toggleClass("is-open");
+    }
 
 });
