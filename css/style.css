@@ -79,6 +79,9 @@ body {
 .home-image path:hover { /* Отображаем слои этажа при наведения мыши */
     opacity: 1;
 }
+path.current-floor {
+    opacity: 1;
+}
 .counter-group {
     display: flex; /* Кнопки выстраиваются по вертикали и встают друг за другом*/
     flex-direction: column;
